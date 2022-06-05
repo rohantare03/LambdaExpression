@@ -53,5 +53,18 @@ namespace LambdaExpression
                 throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_AGE, "No Person Having Age between 13-19");
             }
         }
+        //UC4 : Finding Average age in the list
+        public void AverageAge()
+        {
+            try
+            {
+                double avgAge = list.Average(r => r.Age);
+                Console.WriteLine("The Average of all the person's age is :" + avgAge);
+            }
+            catch
+            {
+                throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_AGE, "Person Age Not Found");
+            }
+        }
     }
 }
