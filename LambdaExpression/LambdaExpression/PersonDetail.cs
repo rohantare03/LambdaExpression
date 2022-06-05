@@ -66,5 +66,20 @@ namespace LambdaExpression
                 throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_AGE, "Person Age Not Found");
             }
         }
+        //UC5 : Finding a specific name
+        public void SpecificName()
+        {
+            try
+            {
+                if (list.Exists(r => r.Name == "Rohan"))
+                {
+                    Console.WriteLine("Yes, A person having name 'Rohan' exists in the list");
+                }
+            }
+            catch
+            {
+                throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_NAME, "Person Name Not Found");
+            }
+        }
     }
 }
