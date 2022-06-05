@@ -23,5 +23,20 @@ namespace LambdaExpression
                 Console.WriteLine("SSN : " + person.SSN + " ; " + "Name : " + person.Name + " ; " + "Address :" + person.Address + " ; " + "Age : " + person.Age);
             }
         }
+        //UC2 : Age less than 60
+        public void AgeLessThan60()
+        {
+            try
+            {
+                foreach (Person person in list.FindAll(r => (r.Age <= 60)).Take(2).ToList())
+                {
+                    Console.WriteLine("Name : " + person.Name + "  " + "Age : " + person.Age);
+                }
+            }
+            catch
+            {
+                throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_AGE, "No Person Having Age below 60");
+            }
+        }
     }
 }
