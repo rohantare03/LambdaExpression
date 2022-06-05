@@ -81,5 +81,20 @@ namespace LambdaExpression
                 throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_NAME, "Person Name Not Found");
             }
         }
+        //UC6 : Skip the record for age less than 60
+        public void SkipRecord()
+        {
+            try
+            {
+                foreach (Person person in list.FindAll(r => (r.Age > 60)))
+                {
+                    Console.WriteLine("Name : " + person.Name + "  " + "Age : " + person.Age);
+                }
+            }
+            catch
+            {
+                throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_AGE, "No Person Having Age above 60");
+            }
+        }
     }
 }

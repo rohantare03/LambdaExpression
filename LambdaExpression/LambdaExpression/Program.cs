@@ -27,6 +27,11 @@
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine("Checking whether a person having name 'Rohan' exists or not...");
             personDetails.SpecificName();
+
+            //UC6
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine("Skipping every person whose age is less than 60 years....");
+            personDetails.SkipRecord();
         }
     }
 }
