@@ -96,5 +96,21 @@ namespace LambdaExpression
                 throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_AGE, "No Person Having Age above 60");
             }
         }
+        //UC7 : Remove specific name
+        public void RemoveName()
+        {
+            try
+            {
+                list.RemoveAll(r => (r.Name == "Rohan"));
+                if (list.TrueForAll(r => r.Name != "Rohan"))
+                {
+                    Console.WriteLine("No person is in list having name as Rohan");
+                }
+            }
+            catch
+            {
+                throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_NAME, "Person Name Not Found");
+            }
+        }
     }
 }

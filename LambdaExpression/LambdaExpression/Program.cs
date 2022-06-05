@@ -32,6 +32,11 @@
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine("Skipping every person whose age is less than 60 years....");
             personDetails.SkipRecord();
+
+            //UC7
+            Console.WriteLine("---------------------------------------------------");
+            Console.WriteLine("Remove specific from the list");
+            personDetails.RemoveName();
         }
     }
 }
