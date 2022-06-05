@@ -38,5 +38,20 @@ namespace LambdaExpression
                 throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_AGE, "No Person Having Age below 60");
             }
         }
+        //UC3: Age between 13 to 18
+        public void AgeBetween()
+        {
+            try
+            {
+                foreach (Person person in list.FindAll(r => (r.Age >= 13 && r.Age <= 18)))
+                {
+                    Console.WriteLine("Name : " + person.Name + "  " + "Age : " + person.Age);
+                }
+            }
+            catch
+            {
+                throw new LambdaCustomException(LambdaCustomException.Exceptiontype.NO_SUCH_AGE, "No Person Having Age between 13-19");
+            }
+        }
     }
 }
